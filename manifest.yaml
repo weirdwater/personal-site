@@ -27,6 +27,8 @@ spec:
       labels:
         app: personal-site
     spec:
+      imagePullSecrets:
+      - name: bruijnes
       containers:
       - name: nginx
         image: registry.digitalocean.com/bruijnes/personal-site:1.0.0
