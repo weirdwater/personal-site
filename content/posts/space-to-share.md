@@ -1,19 +1,11 @@
 ---
-title: Space to share
-description: To become comfortable publishing work (in progress)  I decide to carve out a personal space on the internet to do just that.
-date: 2021-02-08
-categories:
+title: "Space to Share"
+date: 2021-02-09T14:24:18+01:00
+Tags:
+- Go
+- Javascript
 - Development
-tags:
-- node.js
-- golang
-- ruby
-- hugo
-- next.js
-- gatsby.js
-- nuxt.js
-- react.js
-- Typescript
+- Jamstack
 ---
 
 Something I struggle with is perfectionism. To be clear, this is not a humble brag where I insinuate that everything I deliver is perfect. Far from it, it has been debilitating. I have deliberately refrained from submitting assignments that probably were good enough, but weren't in my own eyes causing me to fail classes. In fact, I have given up many assignments because I was sure they wouldn't be up to my standards before the deadline.
@@ -146,3 +138,12 @@ As of right now it is a showdown between Next.js, Gatsby, and Hugo. While Hugo p
 Looking at the table above it looks like Hugo will provide the most features out of the box. I expect that setting up a blog using Hugo will be a breeze. I also think this project is the most  appropriate for using Hugo, since it has such strong markdown support and content management. While I would really like to try out Next.js I have a different project in mind that would be better suited for it.
 
 So there you have it. The blog you are reading right now, is built using Hugo.
+
+## Getting started
+
+To get this blog out of the door as quickly as possible I won't be concerning myself with the interaction and visual design. When I do I'll write about it in a follow-up, I promise. For now I picked a decent, minimalistic [theme](https://themes.gohugo.io/kiss/) from Hugo's theme directory.
+
+For hosting I will be using a VPS I already have set up with Nginx and Let's Encrypt. Unlike the other projects already on the server I won't be running this site as a Docker container. It could well easily be done, but it seems rather unnecessary to forward traffic from one Nginx instance to another inside a container.
+
+And that concludes how this site came to be.
+
