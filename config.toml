@@ -1,4 +1,4 @@
-baseURL = "http://www.arjobruijn.es"
+baseURL = "https://www.arjobruijn.es"
 languageCode = "en-us"
 title = "Arjo Bruijnes"
 theme = "kiss"
