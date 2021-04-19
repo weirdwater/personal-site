@@ -24,7 +24,7 @@ github = "weirdwater"
 instagram = "oreobrowness"
 linkedin = "arjo-bruijnes-35924ba9"
 rss = "index.xml"
-email = "arjo@weirdwater.net"
+email = "dev@arjobruijn.es"
 
 [params.social.config]
 platforms = ["github", "twitter", "linkedin", "email", "rss"]
