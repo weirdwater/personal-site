@@ -5,7 +5,7 @@ date: 2023-02-01T00:00:00+02:00
 dateEnd: 
 experience:
 - education
-skills:
+tags:
 - Discrete Mathematics
 - Logic
 - Computer Security

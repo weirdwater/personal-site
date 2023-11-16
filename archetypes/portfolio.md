@@ -4,6 +4,6 @@ institution:
 date: {{ .Date }}
 dateEnd: 
 experience:
-skills:
+tags:
 ---
 

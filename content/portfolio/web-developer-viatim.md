@@ -5,7 +5,7 @@ date: 2016-05-01T00:00:00+02:00
 dateEnd: 2017-09-01T00:00:00+02:00
 experience:
 - work
-skills:
+tags:
 - Wordpress
 - PHP
 - Linux

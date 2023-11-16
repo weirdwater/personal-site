@@ -5,7 +5,7 @@ date: 2017-01-10T00:00:00+01:00
 dateEnd: 
 experience:
 - personal
-skills:
+tags:
 - browser extensions
 - Javascript
 - HTML5

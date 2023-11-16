@@ -5,7 +5,7 @@ date: 2013-08-01T00:00:00+02:00
 dateEnd: 2015-09-01T00:00:00+02:00
 experience:
 - voluntary
-skills:
+tags:
 - Film Editing
 - Video Encoding
 - Video Production
