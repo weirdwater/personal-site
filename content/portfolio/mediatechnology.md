@@ -7,6 +7,7 @@ experience:
 - education
 skills:
 - Human Centered Design
+- OOP Design Patterns
 - User Research
 - User Experience Design
 - Agile Development

@@ -19,6 +19,7 @@ skills:
 - Kibana
 - NewRelic
 - Jenkins
+- JUnit
 ---
 
 As part of the 3rd year internship of my HBO Bachelors, I interned at Sharecare, Inc. in Atlanta GA. During the internship I was part of the Performance team, identifying slow pages on sharecare.com and improving their performance.
