@@ -4,7 +4,7 @@ date: 2021-04-19T17:18:00+02:00
 categories:
 - "Building Block: Interactie Ontwerpen"
 tags:
-- UX
+- User Experience Design
 - CMGT
 lang: nl
 ---
