@@ -6,6 +6,11 @@ Paginate = 5
 enableRobotsTXT = true
 copyright = "&copy; Arjo Bruijnes 2021"
 
+[params.taxonomies]
+tag = "tags"
+experience = "experience"
+skill = "skills"
+
 [params.rss]
 includeContent = true
 authorName = "Arjo Bruijnes"
