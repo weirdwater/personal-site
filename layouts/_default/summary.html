@@ -1,10 +1,11 @@
 <article>
     <div class="subtitle tags is-6 is-pulled-right">
         {{ with .Params.tags }}
-        {{ collections.First 3 . | partial "tags" }}{{if gt (len .) 3}} | <a class="subtitle is-6" href="{{ $.Page.Permalink }}">...</a>{{end}}
+        {{ partial "tags" . }}
         {{ end }}
     </div>
-    {{if not .Date.IsZero }}<h2 class="subtitle is-6 date">{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime .).Format "January, 2006" }}{{else}}Current{{end}}</h2>{{ end }}
+    <h2 class="subtitle is-6 highlight" ><a href="{{.Parent.Permalink}}" >{{.Parent.Name}}</a></h2>
+    {{if not .Date.IsZero }}<h2 class="subtitle is-6 date">{{ .Date.Format "January, 2006" }}</h2>{{ end }}
     <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}{{ partial "taxonomies_count" . }}</a>{{ if .Draft }}
         ::Draft{{ end }}</h1>
     <div class="content">

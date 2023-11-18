@@ -1,9 +1,40 @@
 
+.highlight a,
 .content h1,
 .content h2,
 .content h3,
 .content h4,
 .content h5,
 .content h6 {
-    color: #D32FD3; 
+    color: #cf00cf; 
+}
+
+.tags {
+    max-width: 65%;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.organization a {
+    color: #69707a;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header img {
+    mask: url(/mask-circle.svg);
+    -webkit-mask-image: url(/mask-circle.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    object-fit: contain;
+    height: fit-content;
+}
+
+.header .textcontainer {
+    grid-column: span 2;
+    padding: 1.5em;
 }

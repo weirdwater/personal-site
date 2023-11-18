@@ -1,15 +1,13 @@
 ---
-title: "Junior Developer"
+title: "Medior Developer"
 organizations:
 - hoppinger
-date: 2021-08-01T00:00:00+02:00
-dateEnd: 2022-06-30T00:00:00+02:00
-experience:
-- work
+date: 2022-07-01T00:00:00+02:00
+dateEnd:
 tags:
 - Docker
 - nginx
-- Puppet
+- haproxy
 - Ansible
 - Kubernetes
 - OpenSSL
@@ -19,11 +17,12 @@ tags:
 - ElasticSearch
 - React.js
 - Typescript
-- Javascript
 - HTML5
 - CSS
 - dotnet
 - git
 - Client Communication
+- Lead Development
+- python
 ---
 

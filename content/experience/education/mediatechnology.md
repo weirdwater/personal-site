@@ -4,8 +4,6 @@ organizations:
 - hro
 date: 2014-09-01T00:00:00+02:00
 dateEnd: 2021-07-15T00:00:00+02:00
-experience:
-- education
 tags:
 - Human Centered Design
 - OOP Design Patterns

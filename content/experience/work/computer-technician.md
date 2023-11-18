@@ -4,8 +4,6 @@ organizations:
 - studentaanhuis
 date: 2015-09-01T00:00:00+02:00
 dateEnd: 2016-09-01T00:00:00+02:00
-experience:
-- work
 tags:
 - Client Communication
 - Support

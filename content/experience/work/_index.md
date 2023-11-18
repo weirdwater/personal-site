@@ -1,4 +1,3 @@
 ---
-title: Work
-description: Experience gained through work.
+title: Work Experience
 ---

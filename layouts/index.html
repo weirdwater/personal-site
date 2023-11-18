@@ -1,0 +1,27 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<section class="section">
+    <div class="container header">
+        {{with (.Param "avatar" | resources.Get).Resize "530x Lanczos webp photo" }}
+        <figure>
+            <img src="{{ .Permalink }}" width="{{.Width}}" height="{{.Height}}" alt="Arjo laughing" />
+        </figure>
+        {{end}}
+        <div class="textcontainer" >
+            <h1 class="title">{{ .Title }}</h1>
+            <div class="content">
+                {{.Content}}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <h1 class="title">Latest updates</h1>
+        <hr />
+        {{ range (.RegularPagesRecursive | collections.First 3) }}
+        {{ .Render "summary" }}
+        {{ end }}
+    </div>
+</section>
+{{ partial "footer" . }}

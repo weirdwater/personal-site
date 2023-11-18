@@ -1,0 +1,21 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<section class="section">
+    <div class="container">
+        <h1 class="title">{{ .Title }}</h1>
+        <div class="content">
+            {{.Content}}
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        {{- $pages := .RegularPagesRecursive -}}
+        {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) 50 }}
+        {{ range sort .Paginator.Pages }}
+        {{ .Render "summary" }}
+        {{ end }}
+    </div>
+</section>
+{{ partial "pager" . }}
+{{ partial "footer" . }}
