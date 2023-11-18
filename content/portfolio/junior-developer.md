@@ -1,10 +1,29 @@
 ---
-title: "Trainee Webdevelopment"
-institution: "Hoppinger B.V., Rotterdam"
-date: 2018-02-01T00:00:00+01:00
-dateEnd: 2021-07-31T00:00:00+02:00
+title: "Junior Developer"
+organizations:
+- hoppinger
+date: 2021-08-01T00:00:00+02:00
+dateEnd: 2022-06-30T00:00:00+02:00
 experience:
 - work
 tags:
+- Docker
+- nginx
+- Puppet
+- Ansible
+- Kubernetes
+- OpenSSL
+- SSH
+- Linux
+- PostgreSQL
+- ElasticSearch
+- React.js
+- Typescript
+- Javascript
+- HTML5
+- CSS
+- dotnet
+- git
+- Client Communication
 ---
 

@@ -9,7 +9,7 @@ copyright = "&copy; Arjo Bruijnes 2021"
 [params.taxonomies]
 tag = "tags"
 experience = "experience"
-skill = "skills"
+organization = "organizations"
 
 [params.rss]
 includeContent = true
@@ -32,5 +32,5 @@ rss = "index.xml"
 email = "dev@arjobruijn.es"
 
 [params.social.config]
-platforms = ["github", "twitter", "linkedin", "email", "rss"]
+platforms = ["github", "linkedin", "email", "rss"]
 
