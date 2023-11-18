@@ -1,3 +1,6 @@
+/**
+* Text Content
+*/
 
 .highlight a,
 .content h1,
@@ -20,9 +23,22 @@
     color: #69707a;
 }
 
+/**
+* Homepage Header
+*/
+
 .header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header figure {
+    background-size: 100%;
+    background-image: url(http://imgur.com/jMQ5vHg);
+    -webkit-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
+    -moz-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
+    -ms-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
+    -o-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
 }
 
 .header img {
@@ -37,4 +53,15 @@
 .header .textcontainer {
     grid-column: span 2;
     padding: 1.5em;
+}
+
+@media screen and (max-width: 530px) {
+    .header figure,
+    .header .textcontainer {
+        grid-column: span 3;
+    }
+
+    .header figure {
+        justify-self: center;
+    }
 }
