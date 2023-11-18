@@ -43,8 +43,12 @@
 
 .header img {
     mask: url(/mask-circle.svg);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
     -webkit-mask-image: url(/mask-circle.svg);
     -webkit-mask-size: contain;
+    -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
     object-fit: contain;
     height: fit-content;
