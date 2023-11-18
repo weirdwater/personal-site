@@ -1,0 +1,13 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<section class="section">
+  <div class="container">
+    {{- $pages := .Pages -}}
+    {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) 50 }}
+    {{ range sort .Paginator.Pages }}
+    {{ .Render "summary" }}
+    {{ end }}
+  </div>
+</section>
+{{ partial "pager" . }}
+{{ partial "footer" . }}

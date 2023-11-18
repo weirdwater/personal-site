@@ -1,0 +1,18 @@
+<article>
+    <div class="subtitle tags is-6 is-pulled-right">
+        {{ with .Params.tags }}
+        {{ collections.First 3 . | partial "tags" }}{{if gt (len .) 3}} | <span>...</span>{{end}}
+        {{ end }}
+    </div>
+    {{if not .Date.IsZero }}<h2 class="subtitle is-6 date">{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime .).Format "January, 2006" }}{{else}}Current{{end}}</h2>{{ end }}
+    <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}{{ partial "taxonomies_count" . }}</a>{{ if .Draft }}
+        ::Draft{{ end }}</h1>
+    <div class="content">
+        {{ .Summary | plainify | safeHTML }}
+        {{ if .Truncated }}
+        <a class="button is-link" href="{{ .Permalink }}" style="height:28px">
+            Read more
+        </a>
+        {{ end }}
+    </div>
+</article>

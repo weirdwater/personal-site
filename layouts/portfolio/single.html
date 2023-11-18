@@ -1,0 +1,30 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      {{ with .Params.tags }}
+      {{  collections.First 6 . | partial "tags" }}{{if gt (len .) 6}} | <span>...</span>{{end}}
+      {{ end }}
+    </div>
+    {{if not .Date.IsZero }}<h2 class="subtitle is-6">{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime .).Format "January, 2006" }}{{else}}Current{{end}}</h2>{{ end }}
+    <h1 class="title">{{ .Title }}</h1>
+    {{ if and (.Site.Params.Info.adsense) (.Params.adsenseTop) }}
+    {{ partial "adsense" . }}
+    {{ end }}
+    <div class="content">
+      {{ .Content }}
+      {{ if .Site.Params.Info.related }}
+      <div class="related">{{ partial "related" . }}</div>
+      {{ end }}
+    </div>
+    {{ if and (.Site.Params.Info.adsense)  (.Params.adsenseBottom) }}
+    {{ partial "adsense" . }}
+    {{ end}}
+  </div>
+</section>
+{{ if (and (.Site.Params.Info.codeCopy) (findRE "<pre" .Content 1)) }}
+    <script src="/js/copycode.js"></script>
+{{ end }}
+{{ partial "disqus" . }}
+{{ partial "footer" . }}
