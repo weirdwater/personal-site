@@ -1,7 +1,7 @@
 <article>
     <div class="subtitle tags is-6 is-pulled-right">
         {{ with .Params.tags }}
-        {{ collections.First 3 . | partial "tags" }}{{if gt (len .) 3}} | <span>...</span>{{end}}
+        {{ collections.First 3 . | partial "tags" }}{{if gt (len .) 3}} | <a class="subtitle is-6" href="{{ $.Page.Permalink }}">...</a>{{end}}
         {{ end }}
     </div>
     {{if not .Date.IsZero }}<h2 class="subtitle is-6 date">{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime .).Format "January, 2006" }}{{else}}Current{{end}}</h2>{{ end }}
