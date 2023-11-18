@@ -33,6 +33,8 @@
 }
 
 .header figure {
+    display: flex;
+    align-items: center;
     -webkit-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
     -moz-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
     -ms-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
@@ -53,7 +55,7 @@
     padding: 1.5em;
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 550px) {
     .header figure,
     .header .textcontainer {
         grid-column: span 3;
