@@ -14,7 +14,7 @@ tag = "tags"
 [params.rss]
 includeContent = true
 authorName = "Arjo Bruijnes"
-authorEmail = "arjo@weirdwater.net"
+authorEmail = "dev@arjobruijn.es"
 
 [params.assets]
 customCSS = ["css/custom.css"]
@@ -22,6 +22,7 @@ customCSS = ["css/custom.css"]
 [params.info]
 poweredBy = true
 taxonomiesCount = true
+homeTitle = "Arjo Bruijnes"
 
 [params.social]
 twitter = "weirdwater"
