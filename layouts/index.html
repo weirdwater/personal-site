@@ -2,9 +2,9 @@
 {{ partial "nav" . }}
 <section class="section">
     <div class="container header">
-        {{with (.Param "avatar" | resources.Get).Resize "500x Lanczos webp photo" }}
+        {{with (.Param "avatar" | resources.Get).Resize "550x Lanczos webp photo" }}
         <figure>
-            <img src="{{ .Permalink }}" width="{{.Width}}" height="{{.Height}}" alt="Arjo laughing" />
+            <img src="{{ .Permalink }}" width="{{div .Width 2}}" height="{{div .Height 2}}" alt="Arjo laughing" />
         </figure>
         {{end}}
         <div class="textcontainer" >
