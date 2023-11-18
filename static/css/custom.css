@@ -33,8 +33,6 @@
 }
 
 .header figure {
-    background-size: 100%;
-    background-image: url(http://imgur.com/jMQ5vHg);
     -webkit-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
     -moz-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
     -ms-filter: drop-shadow(4px 4px 8px rgba(37, 47, 13, 0.5)) drop-shadow(-4px -4px 4px rgba(234, 255, 182, 0.738));
