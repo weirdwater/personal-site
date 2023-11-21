@@ -25,3 +25,4 @@ tags:
 - Client Communication
 ---
 
+Joined the team developing a student housing booking system that needed to sustain high peak loads. Performed frontend engineering tasks, implementing features in React with Typescript. But also required backend work to configure content pipelines.

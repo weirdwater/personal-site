@@ -19,6 +19,6 @@ tags:
 - git
 ---
 
-ViaTim is a Dutch logistics startup. Their concept is to help last mile delivery by designating specific neighbors as pick up points. Pick up points are compensated for receiving packages.
+Brought in to rework the website step by step in a small team. Set up a 1:1 development environment. Set up database migration. Created  custom templates with Timber and ACF. Using SASS for styling, Neat (Bourbon) for lay-out.
 
-Developing custom solutions for the startup's Wordpress website and help set up their backend infrastructure.
+Moved onto working on React and Angular applications for clients and co-workers. Set up continuous delivery using Bitbucket Pipelines for one project. Promoted knowledge sharing and set up a Wiki for the company to use.

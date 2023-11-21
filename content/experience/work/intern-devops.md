@@ -27,3 +27,4 @@ tags:
 - wordpress
 ---
 
+As a member of the Hoppinger Ops team I was responsible for handling SSL certificate orders, registering and managing domain names as well as maintaining hundreds of environments on 190+ servers using Puppet. Occasionally responsible for troubleshooting server issues. Together with another Ops member responsible for communication with clients of a Hoppinger subsidiary which specializes in shared hosting.

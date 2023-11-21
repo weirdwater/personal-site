@@ -28,3 +28,4 @@ tags:
 - wordpress
 ---
 
+As a trainnee webdeveloper at Hoppinger I participated in projects as a front end engineer, developing React applications with C# backends, hybrid React Native and Web applications, as well as Wordpress powered sites for smaller clients. Also participated in DevOps efforts to reduce the cost of infrastructure.
