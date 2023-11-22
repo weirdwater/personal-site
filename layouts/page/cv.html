@@ -1,0 +1,72 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<div class="cv">
+    <header>
+        <!-- Introduction -->
+        <h1>{{.Title}}</h1>
+        <div>{{.Content}}</div>
+    </header>
+    <section>
+        <h1>Education</h1>
+        {{range (.Site.GetPage "section" "education").Pages}}
+        {{$experience := .}}
+        {{range .GetTerms "organizations"}}
+        <article>
+            <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
+            <h1>{{$experience.Title}}</h1>
+            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime
+                .).Format "January, 2006" }}{{else}}Current{{end}}</span>{{ end }}
+            <span>{{.Param "location"}}</span>
+        </article>
+        {{end}}
+        {{end}}
+    </section>
+    <section>
+        <h1>Work</h1>
+        {{range $key, $taxonomy := .Site.Taxonomies.organizations}}
+        {{with $term := $taxonomy.Page}}
+        <section>
+            <header>
+                <h1>{{$term.Title}}</h1>
+                <p>{{$term.Param "location"}}</p>
+            </header>
+            {{range $taxonomy}}
+            <article>
+                <h1>{{.Title}}</h1>
+                <p>{{.Summary}}</p>
+            </article>
+            {{end}}
+        </section>
+        {{end}}
+        {{end}}
+    </section>
+    <section>
+        <h1>Personal Projects</h1>
+        {{range (.Site.GetPage "section" "personal").Pages}}
+        <article>
+            <h1>{{.Title}}</h1>
+            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }}</span>{{ end }}
+            <p>{{.Summary}}</p>
+        </article>
+        {{end}}
+    </section>
+    <section>
+        <h1>Volunteering</h1>
+        {{range (.Site.GetPage "section" "voluntary").Pages}}
+        {{$experience := .}}
+        {{range .GetTerms "organizations"}}
+        <article>
+            <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
+            <h1>{{$experience.Title}}</h1>
+            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime
+                .).Format "January, 2006" }}{{else}}Current{{end}}</span>{{ end }}
+            <span>{{.Param "location"}}</span>
+        </article>
+        {{end}}
+        {{end}}
+    </section>
+    <footer>
+        <!-- Skills and Wishes -->
+    </footer>
+</div>
+{{ partial "footer" . }}
