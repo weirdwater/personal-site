@@ -1,9 +1,16 @@
 ---
-title: CV Arjo Bruijnes
+title: CV
 layout: cv
+dateOfBirth: 1942-08-18T00:00:00Z
+nationalities:
+- 🇺🇸 US Citizen
+address:
+- 1600 Pennsylvania Avenue
+- Washington, DC
 ---
 
-Web Developer active in the Rotterdam area looking to expand their formal knowledge in software engineering. Specializing as a Front End engineer with an eye for the entire stack, ranging from end user experience to the application’s performance. Currently employed at a Digital Agency as a full stack web developer.
+Software engineer specialized in web technologies with a background in DevOps and Human Centered Design. 
 
-Up-to-date with the latest web innovations. Eager to experiment. Strong in innovative & conceptual thinking and able to communicate across disciplines. Aside from developing software, passionate about filmmaking, bass guitar, and cooking.
+Experienced in analyzing, designing, implementing, and delivering software solutions together with clients in multidisciplinary teams. Pragmatic, with an eye for detail and quality.
 
+Eager to learn and experiment. Looking to gain experience in managing high performant, large scale systems. Currently studying part-time for a Master's degree in Software Engineering.

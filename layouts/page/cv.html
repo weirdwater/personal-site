@@ -1,12 +1,41 @@
-{{ partial "header" . }}
-{{ partial "nav" . }}
-<div class="cv">
-    <header>
-        <!-- Introduction -->
-        <h1>{{.Title}}</h1>
-        <div>{{.Content}}</div>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" {{ with .Site.LanguageCode }} lang="{{ . }}" {{ end }}>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ if .Site.Params.rss }}
+    <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
+    {{ end }}
+    <link rel="stylesheet" href="{{ "/css/cv.css" | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header class="section section--introduction">
+        <div class="details column" >
+            <h1 class="name">Arjo Bruijnes</h1>
+            {{if .Site.IsServer }}{{with .Param "dateOfBirth"}}<time datetime="{{ time.AsTime . }}" title="Date of birth" >{{ (time.AsTime .).Format "January 01, 2006" }}</time>{{end}}
+            <div class="detail" >{{range .Param "nationalities"}}{{.}} {{end}}</div>{{end}}
+            
+            <hr class="line" />
+            <address class="column" >
+                {{range .Param "address"}}<span>{{.}}</span>{{end}}
+                <a href="https://www.arjobruijn.es">www.arjobruijn.es</a>
+                <a href="mailto:dev@arjobruijn.es" >dev@arjobruijn.es</a>
+            </address>
+        </div>
+        <div class="blurb column" >{{.Content}}</div>
     </header>
-    <section>
+    <section class="section" >
         <h1>Education</h1>
         {{range (.Site.GetPage "section" "education").Pages}}
         {{$experience := .}}
@@ -14,14 +43,15 @@
         <article>
             <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
             <h1>{{$experience.Title}}</h1>
-            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime
+            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{
+                (time.AsTime
                 .).Format "January, 2006" }}{{else}}Current{{end}}</span>{{ end }}
             <span>{{.Param "location"}}</span>
         </article>
         {{end}}
         {{end}}
     </section>
-    <section>
+    <section class="section" >
         <h1>Work</h1>
         {{range $key, $taxonomy := .Site.Taxonomies.organizations}}
         {{with $term := $taxonomy.Page}}
@@ -40,7 +70,7 @@
         {{end}}
         {{end}}
     </section>
-    <section>
+    <section class="section" >
         <h1>Personal Projects</h1>
         {{range (.Site.GetPage "section" "personal").Pages}}
         <article>
@@ -50,7 +80,7 @@
         </article>
         {{end}}
     </section>
-    <section>
+    <section class="section" >
         <h1>Volunteering</h1>
         {{range (.Site.GetPage "section" "voluntary").Pages}}
         {{$experience := .}}
@@ -58,15 +88,15 @@
         <article>
             <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
             <h1>{{$experience.Title}}</h1>
-            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{ (time.AsTime
+            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{
+                (time.AsTime
                 .).Format "January, 2006" }}{{else}}Current{{end}}</span>{{ end }}
             <span>{{.Param "location"}}</span>
         </article>
         {{end}}
         {{end}}
     </section>
-    <footer>
+    <footer class="section">
         <!-- Skills and Wishes -->
     </footer>
-</div>
-{{ partial "footer" . }}
+</body>
