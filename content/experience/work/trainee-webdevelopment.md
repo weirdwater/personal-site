@@ -1,5 +1,5 @@
 ---
-title: "Trainee Webdevelopment"
+title: "Workingstudent"
 organizations:
 - hoppinger
 date: 2018-02-01T00:00:00+01:00

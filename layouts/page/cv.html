@@ -20,12 +20,12 @@
 </head>
 
 <body>
+
     <header class="section section--introduction">
         <div class="details column" >
             <h1 class="name">Arjo Bruijnes</h1>
             {{if .Site.IsServer }}{{with .Param "dateOfBirth"}}<time datetime="{{ time.AsTime . }}" title="Date of birth" >{{ (time.AsTime .).Format "January 01, 2006" }}</time>{{end}}
             <div class="detail" >{{range .Param "nationalities"}}{{.}} {{end}}</div>{{end}}
-            
             <hr class="line" />
             <address class="column" >
                 {{range .Param "address"}}<span>{{.}}</span>{{end}}
@@ -35,68 +35,101 @@
         </div>
         <div class="blurb column" >{{.Content}}</div>
     </header>
-    <section class="section" >
-        <h1>Education</h1>
-        {{range (.Site.GetPage "section" "education").Pages}}
-        {{$experience := .}}
-        {{range .GetTerms "organizations"}}
-        <article>
-            <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
-            <h1>{{$experience.Title}}</h1>
-            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{
-                (time.AsTime
-                .).Format "January, 2006" }}{{else}}Current{{end}}</span>{{ end }}
-            <span>{{.Param "location"}}</span>
-        </article>
-        {{end}}
-        {{end}}
-    </section>
-    <section class="section" >
-        <h1>Work</h1>
-        {{range $key, $taxonomy := .Site.Taxonomies.organizations}}
-        {{with $term := $taxonomy.Page}}
-        <section>
-            <header>
-                <h1>{{$term.Title}}</h1>
-                <p>{{$term.Param "location"}}</p>
-            </header>
-            {{range $taxonomy}}
-            <article>
-                <h1>{{.Title}}</h1>
-                <p>{{.Summary}}</p>
-            </article>
+
+    <main>
+        <section class="section section--work">
+            <h1>Work</h1>
+            {{range (.Site.GetPage "organizations").Pages.ByWeight }}
+            {{with $term := .}}
+            {{with $workExperience := .Pages | intersect (where ($.Site.GetPage "section" "work").Pages "Params.hideOnCV" "ne" true)}}
+            <section>
+                <header class="company-info">
+                    {{with $term.Param "description"}}<span class="description">{{.}}</span>{{end}}
+                    <h1>{{$term.Title}}</h1>
+                    <span>{{$term.Param "location"}}</span>
+                </header>
+                {{range $workExperience}}
+                <article>
+                    <h1>{{.Title}}</h1>
+                    <div class="period"><time datetime="{{.Date}}">{{ .Date.Format "January, 2006" }}</time> - {{with .Param
+                        "dateEnd"}}<time datetime="{{.}}">{{
+                            (time.AsTime
+                            .).Format "January, 2006" }}</time>{{else}}Current{{end}}</div>
+                    <div>{{.Summary}}</div>
+                </article>
+                {{end}}
+            </section>
+            {{end}}
+            {{end}}
             {{end}}
         </section>
-        {{end}}
-        {{end}}
-    </section>
-    <section class="section" >
-        <h1>Personal Projects</h1>
-        {{range (.Site.GetPage "section" "personal").Pages}}
-        <article>
-            <h1>{{.Title}}</h1>
-            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }}</span>{{ end }}
-            <p>{{.Summary}}</p>
-        </article>
-        {{end}}
-    </section>
-    <section class="section" >
-        <h1>Volunteering</h1>
-        {{range (.Site.GetPage "section" "voluntary").Pages}}
-        {{$experience := .}}
-        {{range .GetTerms "organizations"}}
-        <article>
-            <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
-            <h1>{{$experience.Title}}</h1>
-            {{if not .Date.IsZero }}<span>{{ .Date.Format "January, 2006" }} - {{with .Param "dateEnd"}}{{
-                (time.AsTime
-                .).Format "January, 2006" }}{{else}}Current{{end}}</span>{{ end }}
-            <span>{{.Param "location"}}</span>
-        </article>
-        {{end}}
-        {{end}}
-    </section>
+    
+        <div class="sidebar" >
+            <section class="section section--education">
+                <h1>Education</h1>
+                {{range where (.Site.GetPage "section" "education").Pages "Params.hideOnCV" "ne" true}}
+                {{$experience := .}}
+                {{range .GetTerms "organizations"}}
+                <article>
+                    <h2>{{.Title}} {{.Param "location"}}</h2>
+                    <h1>{{$experience.Title}}</h1>
+                    <div class="period">
+                        <time datetime="{{$experience.Date}}">{{ $experience.Date.Format "January, 2006" }}</time> -
+                        {{with $experience.Param "dateEnd"}}
+                        <time datetime="{{.}}">{{(time.AsTime .).Format "January, 2006" }}</time>
+                        {{else}}
+                        Current
+                        {{end}}
+                    </div>
+                </article>
+                {{end}}
+                {{end}}
+            </section>
+    
+            <section class="section section--personal">
+                <h1>Personal Projects</h1>
+                {{range where (.Site.GetPage "section" "personal").Pages "Params.hideOnCV" "ne" true}}
+                <article>
+                    <h1>{{.Title}}</h1>
+                    {{with .Param "repo"}}<p><a href="{{.}}" target="_blank" >{{.}}</a></p>{{end}}
+                    <p>{{.Summary}}</p>
+                </article>
+                {{end}}
+            </section>
+    
+            <section class="section section--volunteering">
+                <h1>Volunteering</h1>
+                {{range (.Site.GetPage "section" "voluntary").Pages}}
+                {{$experience := .}}
+                {{range .GetTerms "organizations"}}
+                <article>
+                    <h2>{{.Title}} {{.Param "location"}}</h2>
+                    <h1>{{$experience.Title}}</h1>
+                    <div class="period">
+                        <time datetime="{{$experience.Date}}">{{ $experience.Date.Format "January, 2006" }}</time> -
+                        {{with $experience.Param "dateEnd"}}
+                        <time datetime="{{.}}">{{(time.AsTime .).Format "January, 2006" }}</time>
+                        {{else}}
+                        Current
+                        {{end}}
+                    </div>
+                </article>
+                {{end}}
+                {{end}}
+            </section>
+
+            <section class="section section--tech" >
+                <h1>Technologies</h1>
+                <ul>
+                {{range .GetTerms "tags"}}
+                    <li>{{.Title}}</li>
+                {{end}}
+                </ul>
+            </section>
+        </div>
+    
+    </main>
     <footer class="section">
-        <!-- Skills and Wishes -->
+        <p>Full descriptions available on <a href="https://www.arjobruijn.es" target="_blank" >www.arjobruijn.es</a>.</p>
     </footer>
 </body>

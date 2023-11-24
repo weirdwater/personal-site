@@ -101,7 +101,7 @@ video {
 
 html {
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 10px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     min-width: 300px;
@@ -118,6 +118,7 @@ html {
     --color-topo-400: #222324;
     --color-topo-600: #42464c;
     --color-topo-800: #888f9b;
+    --color-topo-900: #dae1ec;
     --color-pato-900: #fff;
     --font-reading: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
     --font-code: "Source Code Pro", Monaco, Inconsolata, monospace;
@@ -142,14 +143,24 @@ body {
 }
 
 .section {
-    grid-column: content-start / content-end;
-    /* border: 1px dashed #aaa; */
-    padding: 1.5rem;
+    margin: 1.5rem;
 }
 
 .column {
     display: flex;
     flex-direction: column;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.sidebar {
+    border: var(--color-topo-900) solid 3px;
+    border-radius: .5rem;
+    align-self: start;
+    margin-top: 1rem;
 }
 
 /**
@@ -164,25 +175,186 @@ body {
 }
 
 .line {
-    border-top: var(--color-topo-800) solid 1px;
+    border-top: var(--color-topo-900) solid 3px;
     width: 100%;
 }
 
 address {
     align-items: end;
     justify-items: center;
+    gap: .1rem;
 }
 
 .detail {
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 .name {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 600;
 }
 
 .blurb {
     gap: .5rem;
-    justify-content: center;
+    justify-content: end;
+    font-size: 1.1rem;
+}
+
+.phone {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/**
+* SECTION - Experience
+*/
+
+section h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    
+}
+
+article {
+    margin-bottom: 1rem;
+}
+
+article h1 {
+    font-size: 1.2rem;
+}
+
+/**
+* SECTION - Experience - Education
+*/
+
+.section--personal article,
+.section--education article,
+.section--volunteering article {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: baseline;
+    row-gap: 0;
+}
+
+.section--personal article h1,
+.section--education article h1,
+.section--volunteering article h1 {
+    margin: 0;
+}
+
+.section--personal article h2,
+.section--education article h2,
+.section--volunteering article h2 {
+    font-size: .8rem;
+    flex-basis: 100%;
+}
+
+/**
+* SECTION - Experience - WORK
+*/
+
+.company-info h1 {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+
+.company-info .description {
+    flex-basis: 100%;
+    font-size: .8rem;
+}
+
+.company-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-self: start;
+    gap: .5rem;
+    row-gap: 0;
+    padding-bottom: .5rem;
+    border-bottom: var(--color-topo-900) solid 2px;
+}
+
+.section--work > section {
+    display: grid;
+    margin-bottom: 1.5rem;
+}
+
+.section--work article {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: baseline;
+    row-gap: 0;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: var(--color-topo-900) solid 2px;
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+
+.section--work article::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -.6rem;
+    top: .4rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 7.5px;
+    border: var(--color-topo-800) solid 3px;
+    background-color: var(--color-pato-900);
+}
+
+.section--work article:first-of-type {
+    padding-top: .5rem;
+}
+
+.section--work article:last-of-type {
+    padding-bottom: 0;
+}
+
+.section--work article:first-of-type::before {
+    top: .9rem;
+}
+
+/**
+* SECTION - tech
+*/
+
+
+.section--tech ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+}
+
+.section--tech ul li {
+    list-style: none;
+    display: block;
+}
+
+.section--tech ul li::after {
+    content: ","
+}
+
+.section--tech ul li:last-of-type::after {
+    content: ""
+}
+
+/**
+*  FOOTER
+*/
+
+footer {
+    display: grid;
+    place-content: center;
+}
+
+footer p {
+    font-style: italic;
 }
