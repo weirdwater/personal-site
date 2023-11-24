@@ -21,16 +21,20 @@
 
 <body>
 
+    {{$showPersonalDetails := .Site.IsServer | or (eq (.Param "publishPersonalDetails") true)}}
     <header class="section section--introduction">
-        <div class="details column" >
-            <h1 class="name">Arjo Bruijnes</h1>
-            {{if .Site.IsServer }}{{with .Param "dateOfBirth"}}<time datetime="{{ time.AsTime . }}" title="Date of birth" >{{ (time.AsTime .).Format "January 01, 2006" }}</time>{{end}}
-            <div class="detail" >{{range .Param "nationalities"}}{{.}} {{end}}</div>{{end}}
+        <div class="details" >
+            <div class="personals column" >
+                <h1 class="name">Arjo Bruijnes</h1>
+                {{if $showPersonalDetails}}{{with .Param "dateOfBirth"}}<time datetime="{{ time.AsTime . }}" title="Date of birth" >{{ (time.AsTime .).Format "January 02, 2006" }}</time>{{end}}
+                <div class="detail" >{{range .Param "nationalities"}}{{.}} {{end}}</div>{{end}}
+            </div>
             <hr class="line" />
             <address class="column" >
-                {{range .Param "address"}}<span>{{.}}</span>{{end}}
+                {{if $showPersonalDetails }}{{range .Param "address"}}<span>{{.}}</span>{{end}}{{end}}
                 <a href="https://www.arjobruijn.es">www.arjobruijn.es</a>
                 <a href="mailto:dev@arjobruijn.es" >dev@arjobruijn.es</a>
+                {{if $showPersonalDetails }}<a href="tel:{{ .Param "phoneMachine" }}" class="phone" >{{ .Param "phone" }}</a>{{end}}
             </address>
         </div>
         <div class="blurb column" >{{.Content}}</div>
@@ -64,7 +68,7 @@
             {{end}}
         </section>
     
-        <div class="sidebar" >
+        <aside>
             {{with .Site.GetPage "section" "education"}}
             <section class="section section--education">
                 <h1><a href="{{.Permalink}}" class="sleeper">Education</a></h1>
@@ -132,7 +136,7 @@
                 {{end}}
                 </ul>
             </section>
-        </div>
+        </aside>
     
     </main>
     <footer>

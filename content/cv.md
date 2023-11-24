@@ -5,6 +5,9 @@ dateOfBirth: 1942-08-18T00:00:00Z
 nationalities:
 - 🇺🇸 US Citizen
 address:
+phone: (+31) 6 12 34 56 78
+phoneMachine: "+31612345678"
+publishPersonalDetails: false
 tags:
 - Typescript
 - Javascript
