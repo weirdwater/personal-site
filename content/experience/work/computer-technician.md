@@ -13,6 +13,8 @@ tags:
 - Printers
 - E-Mail debugging
 - Debugging
+hideOnCV: true
+
 ---
 
 Tech support at home. Talking with clients to figure out what’s wrong. Analysing the current state of a machine ( Macs, PCs, tablets,TVs, home networks, etc.). Informing the client of the current state and advising possible solutions. After talking to the client I would proceed to fix the problem.

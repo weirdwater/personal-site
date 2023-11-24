@@ -45,12 +45,12 @@
             <section>
                 <header class="company-info">
                     {{with $term.Param "description"}}<span class="description">{{.}}</span>{{end}}
-                    <h1>{{$term.Title}}</h1>
+                    <h1><a href="{{$term.Permalink}}" class="sleeper">{{$term.Title}}</a></h1>
                     <span>{{$term.Param "location"}}</span>
                 </header>
                 {{range $workExperience}}
                 <article>
-                    <h1>{{.Title}}</h1>
+                    <h1><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a></h1>
                     <div class="period"><time datetime="{{.Date}}">{{ .Date.Format "January, 2006" }}</time> - {{with .Param
                         "dateEnd"}}<time datetime="{{.}}">{{
                             (time.AsTime
@@ -65,14 +65,15 @@
         </section>
     
         <div class="sidebar" >
+            {{with .Site.GetPage "section" "education"}}
             <section class="section section--education">
-                <h1>Education</h1>
-                {{range where (.Site.GetPage "section" "education").Pages "Params.hideOnCV" "ne" true}}
+                <h1><a href="{{.Permalink}}" class="sleeper">Education</a></h1>
+                {{range where .Pages "Params.hideOnCV" "ne" true}}
                 {{$experience := .}}
                 {{range .GetTerms "organizations"}}
                 <article>
-                    <h2>{{.Title}} {{.Param "location"}}</h2>
-                    <h1>{{$experience.Title}}</h1>
+                    <h2><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a> {{.Param "location"}}</h2>
+                    <h1><a href="{{$experience.Permalink}}" class="sleeper">{{$experience.Title}}</a></h1>
                     <div class="period">
                         <time datetime="{{$experience.Date}}">{{ $experience.Date.Format "January, 2006" }}</time> -
                         {{with $experience.Param "dateEnd"}}
@@ -85,26 +86,30 @@
                 {{end}}
                 {{end}}
             </section>
-    
+            {{end}}
+            
+            {{with .Site.GetPage "section" "personal"}}
             <section class="section section--personal">
-                <h1>Personal Projects</h1>
-                {{range where (.Site.GetPage "section" "personal").Pages "Params.hideOnCV" "ne" true}}
+                <h1><a href="{{.Permalink}}" class="sleeper">Personal Projects</a></h1>
+                {{range where .Pages "Params.hideOnCV" "ne" true}}
                 <article>
-                    <h1>{{.Title}}</h1>
+                    <h1><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a></h1>
                     {{with .Param "repo"}}<p><a href="{{.}}" target="_blank" >{{.}}</a></p>{{end}}
                     <p>{{.Summary}}</p>
                 </article>
                 {{end}}
             </section>
-    
+            {{end}}
+            
+            {{with .Site.GetPage "section" "voluntary"}}
             <section class="section section--volunteering">
-                <h1>Volunteering</h1>
-                {{range (.Site.GetPage "section" "voluntary").Pages}}
+                <h1><a href="{{.Permalink}}" class="sleeper">Volunteering</a></h1>
+                {{range .Pages}}
                 {{$experience := .}}
                 {{range .GetTerms "organizations"}}
                 <article>
-                    <h2>{{.Title}} {{.Param "location"}}</h2>
-                    <h1>{{$experience.Title}}</h1>
+                    <h2><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a> {{.Param "location"}}</h2>
+                    <h1><a href="{{$experience.Permalink}}" class="sleeper">{{$experience.Title}}</a></h1>
                     <div class="period">
                         <time datetime="{{$experience.Date}}">{{ $experience.Date.Format "January, 2006" }}</time> -
                         {{with $experience.Param "dateEnd"}}
@@ -117,19 +122,20 @@
                 {{end}}
                 {{end}}
             </section>
+            {{end}}
 
             <section class="section section--tech" >
                 <h1>Technologies</h1>
                 <ul>
                 {{range .GetTerms "tags"}}
-                    <li>{{.Title}}</li>
+                    <li><a class="sleeper" href="{{.Permalink}}" >{{.Title}}</a></li>
                 {{end}}
                 </ul>
             </section>
         </div>
     
     </main>
-    <footer class="section">
+    <footer>
         <p>Full descriptions available on <a href="https://www.arjobruijn.es" target="_blank" >www.arjobruijn.es</a>.</p>
     </footer>
 </body>

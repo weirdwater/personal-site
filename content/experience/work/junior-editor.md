@@ -18,6 +18,7 @@ tags:
 - YouTube
 - Vimeo
 - Concept Development
+hideOnCV: true
 ---
 
 Hired to edit corporate videos, quickly expanded responsibilities. Cinematography, motion graphics, brainstorming video concepts, implementing client’s wishes during post-production. Lots of experience with Adobe’s Creative Suite.
