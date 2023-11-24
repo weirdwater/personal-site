@@ -372,3 +372,9 @@ a.sleeper:hover {
     color: initial;
     text-decoration: underline;
 }
+
+em,
+.emphasize {
+    font-style: italic;
+    font-weight: 600;
+}
