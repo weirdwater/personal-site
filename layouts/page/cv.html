@@ -1,145 +1,145 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" {{ with .Site.LanguageCode }} lang="{{ . }}" {{ end }}>
+<html xmlns="http://www.w3.org/1999/xhtml" {{-  with .Site.LanguageCode }} lang="{{-  . }}" {{-  end }}>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    {{ if .Site.Params.rss }}
-    <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
-    {{ end }}
-    <link rel="stylesheet" href="{{ "/css/cv.css" | relURL }}">
+    <title>{{-  .Title }} | {{-  .Site.Title }}</title>
+    {{-  if .Site.Params.rss }}
+    <link href="{{-  .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{-  .Site.Title }}">
+    {{-  end }}
+    <link rel="stylesheet" href="{{-  "/css/cv.css" | relURL }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="{{-  .Permalink }}">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
 
-    {{$showPersonalDetails := .Site.IsServer | or (eq (.Param "publishPersonalDetails") true)}}
+    {{- $showPersonalDetails := .Site.IsServer | or (eq (.Param "publishPersonalDetails") true)}}
     <header class="section section--introduction">
         <div class="details" >
             <div class="personals column" >
                 <h1 class="name">Arjo Bruijnes</h1>
-                {{if $showPersonalDetails}}{{with .Param "dateOfBirth"}}<time datetime="{{ time.AsTime . }}" title="Date of birth" >{{ (time.AsTime .).Format "January 02, 2006" }}</time>{{end}}
-                <div class="detail" >{{range .Param "nationalities"}}{{.}} {{end}}</div>{{end}}
+                {{- if $showPersonalDetails}}{{- with .Param "dateOfBirth"}}<time datetime="{{-  time.AsTime . }}" title="Date of birth" >{{-  (time.AsTime .).Format "January 02, 2006" }}</time>{{- end}}
+                <div class="detail" >{{- range .Param "nationalities"}}{{- .}} {{- end}}</div>{{- end}}
             </div>
             <hr class="line" />
             <address class="column" >
-                {{if $showPersonalDetails }}{{range .Param "address"}}<span>{{.}}</span>{{end}}{{end}}
+                {{- if $showPersonalDetails }}{{- range .Param "address"}}<span>{{- .}}</span>{{- end}}{{- end}}
                 <a href="https://www.arjobruijn.es">www.arjobruijn.es</a>
                 <a href="mailto:dev@arjobruijn.es" >dev@arjobruijn.es</a>
-                {{if $showPersonalDetails }}<a href="tel:{{ .Param "phoneMachine" }}" class="phone" >{{ .Param "phone" }}</a>{{end}}
+                {{- if $showPersonalDetails }}<a href="tel:{{-  .Param "phoneMachine" }}" class="phone" >{{-  .Param "phone" }}</a>{{- end}}
             </address>
         </div>
-        <div class="blurb column" >{{.Content}}</div>
+        <div class="blurb column" >{{- .Content}}</div>
     </header>
 
     <main>
         <section class="section section--work">
             <h1>Work</h1>
-            {{range (.Site.GetPage "organizations").Pages.ByWeight }}
-            {{with $term := .}}
-            {{with $workExperience := .Pages | intersect (where ($.Site.GetPage "section" "work").Pages "Params.hideOnCV" "ne" true)}}
+            {{- range (.Site.GetPage "organizations").Pages.ByWeight }}
+            {{- with $term := .}}
+            {{- with $workExperience := .Pages | intersect (where ($.Site.GetPage "section" "work").Pages "Params.hideOnCV" "ne" true)}}
             <section>
                 <header class="company-info">
-                    {{with $term.Param "description"}}<span class="description">{{.}}</span>{{end}}
-                    <h1><a href="{{$term.Permalink}}" class="sleeper">{{$term.Title}}</a></h1>
-                    <span>{{$term.Param "location"}}</span>
+                    {{- with $term.Param "description"}}<span class="description">{{- .}}</span>{{- end}}
+                    <h1><a href="{{- $term.Permalink}}" class="sleeper">{{- $term.Title}}</a></h1>
+                    <span>{{- $term.Param "location"}}</span>
                 </header>
-                {{range $workExperience}}
+                {{- range $workExperience}}
                 <article>
-                    <h1><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a></h1>
-                    <div class="period"><time datetime="{{.Date}}" title="Start" >{{ .Date.Format "January, 2006" }}</time> - {{with .Param
-                        "dateEnd"}}<time datetime="{{.}}" title="End" >{{
+                    <h1><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a></h1>
+                    <div class="period"><time datetime="{{- .Date}}" title="Start" >{{-  .Date.Format "January, 2006" }}</time> - {{- with .Param
+                        "dateEnd"}}<time datetime="{{- .}}" title="End" >{{
                             (time.AsTime
-                            .).Format "January, 2006" }}</time>{{else}}Current{{end}}</div>
-                    <div>{{.Summary}}</div>
+                            .).Format "January, 2006" }}</time>{{- else}} Current{{- end}}</div>
+                    <div>{{- .Summary}}</div>
                 </article>
-                {{end}}
+                {{- end}}
             </section>
-            {{end}}
-            {{end}}
-            {{end}}
+            {{- end}}
+            {{- end}}
+            {{- end}}
         </section>
     
         <aside>
-            {{with .Site.GetPage "section" "education"}}
+            {{- with .Site.GetPage "section" "education"}}
             <section class="section section--education">
-                <h1><a href="{{.Permalink}}" class="sleeper">Education</a></h1>
-                {{range where .Pages "Params.hideOnCV" "ne" true}}
-                {{$experience := .}}
-                {{range .GetTerms "organizations"}}
+                <h1><a href="{{- .Permalink}}" class="sleeper">Education</a></h1>
+                {{- range where .Pages "Params.hideOnCV" "ne" true}}
+                {{- $experience := .}}
+                {{- range .GetTerms "organizations"}}
                 <article>
-                    <h2><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a> {{.Param "location"}}</h2>
-                    <h1><a href="{{$experience.Permalink}}" class="sleeper">{{$experience.Title}}</a></h1>
+                    <h2><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a> {{- .Param "location"}}</h2>
+                    <h1><a href="{{- $experience.Permalink}}" class="sleeper">{{- $experience.Title}}</a></h1>
                     <div class="period">
-                        <time datetime="{{$experience.Date}}" title="Start">{{ $experience.Date.Format "January, 2006" }}</time> -
-                        {{with $experience.Param "dateEnd"}}
-                        <time {{if gt (time.AsTime .) time.Now }}class="emphasize"{{end}} datetime="{{.}}" title="End">{{(time.AsTime .).Format "January, 2006" }}</time>
-                        {{else}}
+                        <time datetime="{{- $experience.Date}}" title="Start">{{-  $experience.Date.Format "January, 2006" }}</time> -
+                        {{- with $experience.Param "dateEnd"}}
+                        <time {{- if gt (time.AsTime .) time.Now }}class="emphasize"{{- end}} datetime="{{- .}}" title="End">{{- (time.AsTime .).Format "January, 2006" }}</time>
+                        {{- else}}
                         <em>Current</em>
-                        {{end}}
+                        {{- end}}
                     </div>
                 </article>
-                {{end}}
-                {{end}}
+                {{- end}}
+                {{- end}}
             </section>
-            {{end}}
+            {{- end}}
             
-            {{with .Site.GetPage "section" "personal"}}
+            {{- with .Site.GetPage "section" "personal"}}
             <section class="section section--personal">
-                <h1><a href="{{.Permalink}}" class="sleeper">Personal Projects</a></h1>
-                {{range where .Pages "Params.hideOnCV" "ne" true}}
+                <h1><a href="{{- .Permalink}}" class="sleeper">Personal Projects</a></h1>
+                {{- range where .Pages "Params.hideOnCV" "ne" true}}
                 <article>
-                    <h1><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a></h1>
-                    {{with .Param "repo"}}<p><a href="{{.}}" target="_blank" >{{.}}</a></p>{{end}}
-                    <p>{{.Summary}}</p>
+                    <h1><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a></h1>
+                    {{- with .Param "repo"}}<p><a href="{{- .}}" target="_blank" >{{- .}}</a></p>{{- end}}
+                    <p>{{- .Summary}}</p>
                 </article>
-                {{end}}
+                {{- end}}
             </section>
-            {{end}}
+            {{- end}}
             
-            {{with .Site.GetPage "section" "voluntary"}}
+            {{- with .Site.GetPage "section" "voluntary"}}
             <section class="section section--volunteering">
-                <h1><a href="{{.Permalink}}" class="sleeper">Volunteering</a></h1>
-                {{range .Pages}}
-                {{$experience := .}}
-                {{range .GetTerms "organizations"}}
+                <h1><a href="{{- .Permalink}}" class="sleeper">Volunteering</a></h1>
+                {{- range .Pages}}
+                {{- $experience := .}}
+                {{- range .GetTerms "organizations"}}
                 <article>
-                    <h2><a href="{{.Permalink}}" class="sleeper">{{.Title}}</a> {{.Param "location"}}</h2>
-                    <h1><a href="{{$experience.Permalink}}" class="sleeper">{{$experience.Title}}</a></h1>
+                    <h2><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a> {{- .Param "location"}}</h2>
+                    <h1><a href="{{- $experience.Permalink}}" class="sleeper">{{- $experience.Title}}</a></h1>
                     <div class="period">
-                        <time datetime="{{$experience.Date}}" title="Start">{{ $experience.Date.Format "January, 2006" }}</time> -
-                        {{with $experience.Param "dateEnd"}}
-                        <time datetime="{{.}}" title="End">{{(time.AsTime .).Format "January, 2006" }}</time>
-                        {{else}}
+                        <time datetime="{{- $experience.Date}}" title="Start">{{-  $experience.Date.Format "January, 2006" }}</time> -
+                        {{- with $experience.Param "dateEnd"}}
+                        <time datetime="{{- .}}" title="End">{{- (time.AsTime .).Format "January, 2006" }}</time>
+                        {{- else}}
                         Current
-                        {{end}}
+                        {{- end}}
                     </div>
                 </article>
-                {{end}}
-                {{end}}
+                {{- end}}
+                {{- end}}
             </section>
-            {{end}}
+            {{- end}}
 
             <section class="section section--tech" >
                 <h1>Technologies</h1>
                 <ul>
-                {{range .GetTerms "tags"}}
-                    <li><a class="sleeper" href="{{.Permalink}}" >{{.Title}}</a></li>
-                {{end}}
+                {{- range .GetTerms "tags"}}
+                    <li><a class="sleeper" href="{{- .Permalink}}" >{{- .Title}}</a></li>
+                {{- end}}
                 </ul>
             </section>
         </aside>
     
     </main>
     <footer>
-        <p>Full descriptions available on <a href="https://www.arjobruijn.es" target="_blank" >www.arjobruijn.es</a>.</p>
+        <p>Full descriptions available on <a href="https://www.arjobruijn.es" target="_blank" >www.arjobruijn.es</a>. Visit <a href="https://www.arjobruijn.es/cv">/cv</a> for HTML version.</p>
     </footer>
 </body>
