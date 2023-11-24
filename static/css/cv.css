@@ -392,7 +392,7 @@ footer {
     place-content: center;
 }
 
-footer p {
+footer span {
     font-style: italic;
 }
 
