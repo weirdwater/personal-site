@@ -27,7 +27,7 @@
             <div class="personals column" >
                 <h1 class="name">Arjo Bruijnes</h1>
                 {{- if $showPersonalDetails}}{{- with .Param "dateOfBirth"}}<time datetime="{{-  time.AsTime . }}" title="Date of birth" >{{-  (time.AsTime .).Format "January 02, 2006" }}</time>{{- end}}
-                <div class="detail nationalities" >{{- range .Param "nationalities"}}<span>{{- .}}</span>{{- end}}</div>{{- end}}
+                <div class="detail row" >{{- range .Param "nationalities"}}<span>{{- .}}</span>{{- end}}</div>{{- end}}
             </div>
             <hr class="line" />
             <address class="column" >
@@ -76,7 +76,7 @@
                 {{- $experience := .}}
                 {{- range .GetTerms "organizations"}}
                 <article>
-                    <h2><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a> {{- .Param "location"}}</h2>
+                    <h2 class="row" ><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a><span>{{- .Param "location"}}</span></h2>
                     <h1><a href="{{- $experience.Permalink}}" class="sleeper">{{- $experience.Title}}</a></h1>
                     <div class="period">
                         <time datetime="{{- $experience.Date}}" title="Start">{{-  $experience.Date.Format "January, 2006" }}</time> -
@@ -98,7 +98,7 @@
                 {{- range where .Pages "Params.hideOnCV" "ne" true}}
                 <article>
                     <h1><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a></h1>
-                    {{- with .Param "repo"}}<p><a href="{{- .}}" target="_blank" >{{- .}}</a></p>{{- end}}
+                    {{- with .Param "repo"}}<p><a href="{{- .}}" class="repo" target="_blank" >{{- .}}</a></p>{{- end}}
                     <p>{{- .Summary}}</p>
                 </article>
                 {{- end}}
@@ -112,7 +112,7 @@
                 {{- $experience := .}}
                 {{- range .GetTerms "organizations"}}
                 <article>
-                    <h2><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a> {{- .Param "location"}}</h2>
+                    <h2 class="row" ><a href="{{- .Permalink}}" class="sleeper">{{- .Title}}</a><span>{{- .Param "location"}}</span></h2>
                     <h1><a href="{{- $experience.Permalink}}" class="sleeper">{{- $experience.Title}}</a></h1>
                     <div class="period">
                         <time datetime="{{- $experience.Date}}" title="Start">{{-  $experience.Date.Format "January, 2006" }}</time> -

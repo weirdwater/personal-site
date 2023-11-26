@@ -266,27 +266,26 @@ article h1 {
 * SECTION - Experience - Education
 */
 
-.nationalities,
-.section--personal article,
-.section--education article,
-.section--volunteering article {
+.row,
+aside article {
     display: flex;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: .5em;
     align-items: baseline;
     row-gap: 0;
 }
 
-.section--personal article h1,
-.section--education article h1,
-.section--volunteering article h1 {
+aside article h1 {
     margin: 0;
 }
 
-.section--personal article h2,
-.section--education article h2,
-.section--volunteering article h2 {
+aside article h2 {
     font-size: .8rem;
+    flex-basis: 100%;
+}
+
+.repo {
+    display: block;
     flex-basis: 100%;
 }
 
