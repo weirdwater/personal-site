@@ -21,4 +21,4 @@ tags:
 - JUnit
 ---
 
-Monitored page performance and performed interventions low-performing on pages in the frontend and Java backend. Benchmarked microservices. Led an A/B test comparing CTR of two frontend modules. Optimized Maven build pipeline.
+Monitored page performance and performed interventions on low-performing pages in the frontend and Java backend. Benchmarked microservices. Led an A/B test comparing CTR of two frontend modules. Optimized Maven build pipeline.
