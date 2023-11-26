@@ -1,5 +1,5 @@
 ---
-title: "Workingstudent"
+title: "Workingstudent Development"
 organizations:
 - hoppinger
 date: 2018-02-01T00:00:00+01:00
@@ -28,4 +28,4 @@ tags:
 - wordpress
 ---
 
-As a trainnee webdeveloper at Hoppinger I participated in projects as a front end engineer, developing React applications with C# backends, hybrid React Native and Web applications, as well as Wordpress powered sites for smaller clients. Also participated in DevOps efforts to reduce the cost of infrastructure.
+Participated as frontend engineer for client projects on part-time basis. Contributed to shared architecture under supervision of CTO and Architects. Ported an in-house frontend framework to React Native. Lead the development of a React Native project. Trained clients to use backoffice systems. Assisted in creating video marketing material Migrated hosting environments from Virtual Private Servers to container based infrastructure using Docker and Kubernetes. Designed and implemented build pipelines. Reduced monthly operational cost by thousands of euros by decommissioning servers and shrinking infrastructure subscriptions.

@@ -27,7 +27,7 @@
             <div class="personals column" >
                 <h1 class="name">Arjo Bruijnes</h1>
                 {{- if $showPersonalDetails}}{{- with .Param "dateOfBirth"}}<time datetime="{{-  time.AsTime . }}" title="Date of birth" >{{-  (time.AsTime .).Format "January 02, 2006" }}</time>{{- end}}
-                <div class="detail" >{{- range .Param "nationalities"}}{{- .}} {{- end}}</div>{{- end}}
+                <div class="detail nationalities" >{{- range .Param "nationalities"}}<span>{{- .}}</span>{{- end}}</div>{{- end}}
             </div>
             <hr class="line" />
             <address class="column" >

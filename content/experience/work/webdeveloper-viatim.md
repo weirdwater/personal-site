@@ -19,6 +19,4 @@ tags:
 - git
 ---
 
-Brought in to rework the website step by step in a small team. Set up a 1:1 development environment. Set up database migration. Created  custom templates with Timber and ACF. Using SASS for styling, Neat (Bourbon) for lay-out.
-
-Moved onto working on React and Angular applications for clients and co-workers. Set up continuous delivery using Bitbucket Pipelines for one project. Promoted knowledge sharing and set up a Wiki for the company to use.
+Set up QA environments and CI/CD pipelines. Created a custom Wordpress theme. Implemented track-and-trace and pick-up point locator interfaces in React. Introduced knowledge sharing platform.

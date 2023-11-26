@@ -144,7 +144,7 @@ body {
 }
 
 .section {
-    margin: 1.5rem;
+    margin: 1rem;
 }
 
 .column {
@@ -266,6 +266,7 @@ article h1 {
 * SECTION - Experience - Education
 */
 
+.nationalities,
 .section--personal article,
 .section--education article,
 .section--volunteering article {
@@ -315,9 +316,14 @@ article h1 {
     border-bottom: var(--color-topo-900) solid 2px;
 }
 
+.section--work {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .section--work > section {
     display: grid;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .section--work article {
@@ -332,6 +338,10 @@ article h1 {
     position: relative;
     margin-bottom: 0;
     padding-bottom: 1rem;
+}
+
+.section--work article h1 {
+    margin-bottom: 0;
 }
 
 .section--work article::before {
@@ -390,6 +400,7 @@ article h1 {
 footer {
     display: grid;
     place-content: center;
+    font-size: .8rem;
 }
 
 footer span {

@@ -13,6 +13,7 @@ tags:
 - OpenSSL
 - SSH
 - Linux
+- Odata
 - PostgreSQL
 - ElasticSearch
 - React.js
@@ -25,4 +26,4 @@ tags:
 - Client Communication
 ---
 
-Joined the team developing a student housing booking system that needed to sustain high peak loads. Performed frontend engineering tasks, implementing features in React with Typescript. But also required backend work to configure content pipelines.
+Implemented frontend features using in-house functional wrapper for React. Managed service requests for three applications in production: Classifying, responding to, and solving issues. Set up custom caches to sustain peak loads on booking site. Refactored data handling to be asynchronous of a 10+ year old desktop application used by pharmacies. Advised on integrating webinar suites in existing ticketing system for hybrid events. Advised on implementing measurements for analytics.
