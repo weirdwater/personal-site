@@ -385,7 +385,7 @@ aside article h2 {
 }
 
 .section--tech ul li::after {
-    content: ","
+    content: " |"
 }
 
 .section--tech ul li:last-of-type::after {
