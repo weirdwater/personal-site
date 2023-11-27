@@ -27,4 +27,4 @@ tags:
 - python
 ---
 
-Lead developer for social health platforms, refining, coordinating, and reviewing sprints. Coached juniors and interns. Promoted and participated in knowledge sharing. Introduced Quality Assurance practices. Improved application observability. Refactored caching system to sustain high load during national TV fundraiser event and generalized it for shared architecture. Built tools for improving developer and backoffice experience. Co-created data exchange with client Business Intelligence units.
+Lead developer for social health platforms, refining, coordinating, and reviewing sprints. Coached 3 juniors/interns. Promoted and participated in knowledge sharing. Introduced Quality Assurance practices. Improved application observability. Refactored caching system to sustain high load during national TV event and generalized it for shared architecture. Built tools for improving developer and backoffice experience. Co-created data exchange with client Business Intelligence units.

@@ -26,4 +26,4 @@ tags:
 - Client Communication
 ---
 
-Implemented frontend features using in-house functional wrapper for React. Managed service requests for three applications in production: Classifying, responding to, and solving issues. Set up custom caches to sustain peak loads on booking site. Refactored data handling to be asynchronous of a 10+ year old desktop application used by pharmacies. Advised on integrating webinar suites in existing ticketing system for hybrid events. Advised on implementing measurements for analytics.
+Implemented frontend features using in-house functional wrapper for React. Managed service requests for 3 applications in production: classifying, responding to, and solving issues. Set up custom caches to sustain peak loads (~10k users) on booking site. Refactored data handling to be asynchronous of a 10+ year old desktop application used by pharmacies. Advised on: integrating webinar suites in existing ticketing system for hybrid events; implementing measurements for analytics.
