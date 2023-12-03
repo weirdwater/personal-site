@@ -32,7 +32,7 @@
             <hr class="line" />
             <address class="column" >
                 {{- if $showPersonalDetails }}{{- range .Param "address"}}<span>{{- .}}</span>{{- end}}{{- end}}
-                <a href="https://www.arjobruijn.es">www.arjobruijn.es</a>
+                <a href="{{- absURL "/" }}" target="_blank" >www.arjobruijn.es</a>
                 <a href="mailto:dev@arjobruijn.es" >dev@arjobruijn.es</a>
                 {{- if $showPersonalDetails }}<a href="tel:{{-  .Param "phoneMachine" }}" class="phone" >{{-  .Param "phone" }}</a>{{- end}}
             </address>
@@ -142,8 +142,21 @@
     <footer>
         <p>
             <span> <a href="https://github.com/weirdwater/personal-site" >Source</a></span>
-            | <span>Full descriptions on <a href="https://www.arjobruijn.es" target="_blank" >www.arjobruijn.es</a></span>
-            | <span><a href="https://www.arjobruijn.es/cv">/cv</a> for HTML </span>
+            | <span>Full descriptions on <a href="{{- absURL "/" }}" target="_blank" >www.arjobruijn.es</a></span>
+            | <span><a href="{{- absURL "/cv" }}">/cv</a> for HTML </span>
         </p>
     </footer>
+    <script>
+        function setReferenceParam(identifier) {
+            Array.from(document.querySelectorAll("a"))
+                .filter(a => a.href.startsWith("{{- .Site.BaseURL }}"))
+                .forEach(a => {
+                    const url = new URL(a.href)
+                    const params = new URLSearchParams(url.search)
+                    params.set("r", identifier)
+                    url.search = params
+                    a.href = url.href
+                })
+        }
+    </script>
 </body>
