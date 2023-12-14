@@ -12,6 +12,7 @@ tags:
 - Planning
 - Photography
 - Graphic Design
+hideOnCv: true
 ---
 
 VWO (profiel: Cultuur & Maatschappij) at the Driestar College highschool in Gouda.
